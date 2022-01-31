@@ -1,0 +1,95 @@
+:root {
+    --main-text-color: khaki;
+}
+
+body {
+    margin: 0
+}
+
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    background: transparent linear-gradient(180deg, #3089A9 0%, #91AA9D 100%) 0 0 no-repeat padding-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+    width: 50%;
+}
+
+.login-form {
+    text-align: center;
+    width: 50%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 66%;
+    height: 44vh;
+
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border: 1px solid #91AA9D;
+    border-radius: 66px;
+    opacity: 0.70;
+}
+
+.button_login {
+    background: #FFC573 0 0 no-repeat padding-box;
+    border: none;
+    width: 77%;
+    height: 7vh;
+    border-radius: 30px;
+    margin: 2em;
+}
+
+.button_register {
+    background: #8DE151 0 0 no-repeat padding-box;
+    border: 1px solid #91AA9D;
+    border-radius: 30px;
+    width: 55%;
+    height: 4.5vh;
+    text-align: center;
+    margin-top: 2em;
+    font: normal normal bold 1.4vh Segoe UI;
+    letter-spacing: 0.05vw;
+    color: #707070;
+}
+
+input {
+    background: transparent;
+    text-align: left;
+    font: normal normal normal 2vh Segoe UI;
+    color: #70707080;
+    margin: 1em;
+    width: 75%;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 0.5em;
+}
+
+@media screen and (max-device-width:540px),
+screen and (max-width:540px) {
+    .login-container{
+        flex-direction: column;
+        width: 100vw;
+    }
+    .logo, .login-form{
+        width: 100%;
+    }
+    .logo {
+        height: 40%;
+    }
+    form {
+        width: 75%;
+        margin: auto;
+    }
+
+}

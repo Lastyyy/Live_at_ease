@@ -1,6 +1,10 @@
 <?php
 
+require 'Routing.php';
+
 $name = "Szymon";
 
-echo "Hi there, $name 👋";
+$path = trim($_SERVER['REQUEST_URL'], '/');
+echo "Hi";
 
+Router::run($path);
