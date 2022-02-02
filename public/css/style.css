@@ -1,15 +1,11 @@
-:root {
-    --main-text-color: khaki;
-}
-
 body {
+    background: transparent linear-gradient(180deg, #3089A9 0%, #91AA9D 100%) 0 0 no-repeat padding-box;
     margin: 0
 }
 
 .login-container {
     width: 100vw;
     height: 100vh;
-    background: transparent linear-gradient(180deg, #3089A9 0%, #91AA9D 100%) 0 0 no-repeat padding-box;
 
     display: flex;
     flex-direction: row;

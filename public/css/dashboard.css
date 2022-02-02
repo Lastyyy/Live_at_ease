@@ -1,0 +1,54 @@
+body {
+    background: transparent linear-gradient(180deg, #3089A9 0%, #91AA9D 100%) 0 0 no-repeat padding-box;
+    margin: 0
+}
+
+.page-container{
+    display: grid;
+    grid-template-rows: 20vh 80vh;
+    grid-template-columns: 20% 60% 20%;
+}
+
+nav {
+    grid-area: 1/1/2/4;
+    display: grid;
+    grid-template-columns: 20% repeat(5, 12%) 25%;
+    height: 10vh;
+    width: 100vw;
+    border-bottom: 0.05em solid #DFDFDF;
+    justify-items: center;
+    align-items: center;
+}
+
+.logo-button{
+    margin-top: 0.2em;
+}
+
+.white-button, .orange-button{
+    background: transparent;
+    border-width: 0.4em;
+    border-style: inset;
+    width: 95%;
+    height: 88%;
+}
+
+.white-button:hover, .orange-button:hover, #logout-button:hover, .logo-button:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.orange-button{
+    border-color: transparent transparent orange transparent;
+    color: orange;
+}
+
+.white-button{
+    color: white;
+    border: none;
+}
+
+#logout-button, .logo-button{
+    background: transparent;
+    border: none;
+
+    color: white;
+}
