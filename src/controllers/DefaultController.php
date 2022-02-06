@@ -2,18 +2,25 @@
 
 require_once 'AppController.php';
 
-class DefaultController extends AppController{
-    public function login(){
-        $this -> render('login');
+class DefaultController extends AppController {
+
+    public function login()
+    {
+        $this->render('login');
     }
-    public function dashboard(){
-        $animals = ['dog', 'cat', 'cow'];
-        //TODO read data from database 
 
-        //modify data
+    public function dashboard()
+    {
+        $this->render('dashboard');
+    }
 
-        //save data to db
+    public function receipts_group()
+    {
+        $this->render('receipts_group');
+    }
 
-        $this -> render('dashboard', ['animals' => $animals]);
+    public function receipts_owner()
+    {
+        $this->render('receipts_owner');
     }
 }

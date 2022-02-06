@@ -2,9 +2,13 @@
 
 require 'Routing.php';
 
-$name = "Szymon";
+$path = trim($_SERVER['REQUEST_URI'], '/');
+$path = parse_url( $path, PHP_URL_PATH);
 
-$path = trim($_SERVER['REQUEST_URL'], '/');
-echo "Hi";
+Router::get('login', 'DefaultController');
+Router::get('dashboard', 'DefaultController');
+Router::get('receipts_group', 'DefaultController');
+Router::get('receipts_owner', 'DefaultController');
+Router::post('login', 'SecurityController');
 
 Router::run($path);

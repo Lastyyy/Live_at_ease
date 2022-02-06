@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" type = "text/css" href = "../css/normal_ui.css">
-    <link rel = "stylesheet" type = "text/css" href = "../css/dashboard.css">
+    <link rel = "stylesheet" type = "text/css" href = "public/css/normal_ui.css">
+    <link rel = "stylesheet" type = "text/css" href = "public/css/dashboard.css">
     <script src="https://kit.fontawesome.com/c65726fa38.js" crossorigin="anonymous"></script>
     <title>Dashboard</title>
 </head>
@@ -15,7 +15,7 @@
 
         <nav>
 
-            <button class="logo-button"><img alt="logo" src="../img/logo.svg"></button>
+            <button class="logo-button"><img alt="logo" src="public/img/logo.svg"></button>
             <button class="orange-button">
                 <i class="fas fa-home fa-4x"></i>
             </button>
@@ -79,7 +79,7 @@
                 <div class="info-box">
                     <div class="information">
                         <div>
-                            <img class="avatar" alt="logo" src="../img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
                             <div>
                                 <p class="who">Imię Nazwisko</p>
                                 <p class="when">when</p>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="information">
                         <div>
-                            <img class="avatar" alt="logo" src="../img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
                             <div>
                                 <p class="who">Imię Nazwisko</p>
                                 <p class="when">when</p>
@@ -109,7 +109,7 @@
                 <div class="info-box">
                     <div class="receipt">
                         <div>
-                            <img class="avatar" alt="logo" src="../img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
                             <div>
                                 <p class="who">Imię Nazwisko</p>
                                 <p class="when">when</p>
@@ -122,12 +122,12 @@
                                 <p class="send">Prześlij</p>
                                 <p class="how-much">22,25zł</p>
                             </div>
-                            <img class="avatar" alt="logo" src="../img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
                         </div>
                     </div>
                     <div class="receipt">
                         <div>
-                            <img class="avatar" alt="logo" src="../img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
                             <div>
                                 <p class="who">Imię Nazwisko</p>
                                 <p class="when">when</p>
@@ -140,7 +140,7 @@
                                 <p class="send">Prześlij</p>
                                 <p class="how-much">22,25zł</p>
                             </div>
-                            <img class="avatar" alt="logo" src="../img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,7 @@
                 <div class="info-box">
                     <div class="event">
                         <div>
-                            <img class="avatar" alt="logo" src="../img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
                             <div>
                                 <p class="who">Imię Nazwisko</p>
                                 <p class="date">date</p>
@@ -165,7 +165,7 @@
                     </div>
                     <div class="event">
                         <div>
-                            <img class="avatar" alt="logo" src="../img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
                             <div>
                                 <p class="who">Imię Nazwisko</p>
                                 <p class="date">date</p>
@@ -207,23 +207,15 @@
 
             <ul>
                 <li>
-                    <img class="avatar" alt="logo" src="../img/p1.jpg">
+                    <img class="avatar" alt="logo" src="public/img/p1.jpg">
                     Imię Nazssssssssswisko
                 </li>
                 <li>
-                    <img class="avatar" alt="logo" src="../img/p1.jpg">
+                    <img class="avatar" alt="logo" src="public/img/p1.jpg">
                     Imię Nazwisko
                 </li>
                 <li>
-                    <img class="avatar" alt="logo" src="../img/p1.jpg">
-                    Imię Nazwisko
-                </li>
-                <li>
-                    <img class="avatar" alt="logo" src="../img/p1.jpg">
-                    Imię Nazwisko
-                </li>
-                <li>
-                    <img class="avatar" alt="logo" src="../img/p1.jpg">
+                    <img class="avatar" alt="logo" src="public/img/p1.jpg">
                     Imię Nazwisko
                 </li>
             </ul>

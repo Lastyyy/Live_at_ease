@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" type = "text/css" href = "../css/normal_ui.css">
-    <link rel = "stylesheet" type = "text/css" href = "../css/receipts_owner.css">
+    <link rel = "stylesheet" type = "text/css" href = "public/css/normal_ui.css">
+    <link rel = "stylesheet" type = "text/css" href = "public/css/receipts_owner.css">
     <script src="https://kit.fontawesome.com/c65726fa38.js" crossorigin="anonymous"></script>
     <title>Dashboard</title>
 </head>
@@ -15,7 +15,7 @@
 
     <nav>
 
-        <button class="logo-button"><img alt="logo" src="../img/logo.svg"></button>
+        <button class="logo-button"><img alt="logo" src="public/img/logo.svg"></button>
         <button class="white-button">
             <i class="fas fa-home fa-4x"></i>
         </button>
@@ -124,7 +124,7 @@
                     <div class="depo-taken">
                         <div class="owner-for">
                             <div class="owner">
-                                <img class="avatar" alt="logo" src="../img/p1.jpg">
+                                <img class="avatar" alt="logo" src="public/img/p1.jpg">
                                 <div>
                                     <p class="who">Imię Nazwisko</p>
                                     <p class="when">when</p>
@@ -150,25 +150,18 @@
 
         <ul>
             <li>
-                <img class="avatar" alt="logo" src="../img/p1.jpg">
+                <img class="avatar" alt="logo" src="public/img/p1.jpg">
                 Imię Nazssssssssswisko
             </li>
             <li>
-                <img class="avatar" alt="logo" src="../img/p1.jpg">
+                <img class="avatar" alt="logo" src="public/img/p1.jpg">
                 Imię Nazwisko
             </li>
             <li>
-                <img class="avatar" alt="logo" src="../img/p1.jpg">
+                <img class="avatar" alt="logo" src="public/img/p1.jpg">
                 Imię Nazwisko
             </li>
-            <li>
-                <img class="avatar" alt="logo" src="../img/p1.jpg">
-                Imię Nazwisko
-            </li>
-            <li>
-                <img class="avatar" alt="logo" src="../img/p1.jpg">
-                Imię Nazwisko
-            </li>
+
         </ul>
     </div>
 </div>
