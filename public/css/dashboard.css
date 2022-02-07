@@ -141,7 +141,8 @@
 
 .receipt>p{
     text-align: center;
-    font: normal normal bold 1.4vw Segoe UI;
+    align-self: center;
+    font: normal normal bold 1vw Segoe UI;
     margin:0;
     color: #564E4E;
     padding: 0 0.4vw;
