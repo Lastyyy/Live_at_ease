@@ -13,9 +13,9 @@
             <img src="public/img/logo.svg" width="80%" height="80%">
         </div>
         <div class="login-form">
-            <form action="dashboard" method="POST">
-                <input type="text" placeholder="email">
-                <input type="password" placeholder="password">
+            <form action="login" method="POST">
+                <input name="email" type="text" placeholder="email">
+                <input name="password" type="password" placeholder="password">
                 <button class="button_login" type="submit">
                     <img src="public/img/login_button.svg" width="60%" height="60%">
                 </button>
