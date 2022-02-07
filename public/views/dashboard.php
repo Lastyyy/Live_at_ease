@@ -14,26 +14,38 @@
     <div class="page-container">
 
         <nav>
-
-            <button class="logo-button"><img alt="logo" src="public/img/logo.svg"></button>
-            <button class="orange-button">
-                <i class="fas fa-home fa-4x"></i>
-            </button>
-            <button class="white-button">
-                <i class="fas fa-info-circle fa-4x"></i>
-            </button>
-            <button class="white-button">
-                <i class="fas fa-money-bill fa-4x"></i>
-            </button>
-            <button class="white-button">
-                <i class="far fa-calendar-alt fa-4x"></i>
-            </button>
-            <button class="white-button">
-                <i class="fas fa-address-card fa-4x"></i>
-            </button>
+            <a href="dashboard">
+                <button class="logo-button"><img alt="logo" src="public/img/logo.svg"></button>
+            </a>
+            <a href="dashboard">
+                <button class="orange-button">
+                    <i class="fas fa-home fa-4x"></i>
+                </button>
+            </a>
+            <a href="info">
+                <button class="white-button">
+                    <i class="fas fa-info-circle fa-4x"></i>
+                </button>
+            </a>
+            <a href="receipts_group">
+                <button class="white-button">
+                    <i class="fas fa-money-bill fa-4x"></i>
+                </button>
+            </a>
+            <a href="receipts_group">
+                <button class="white-button">
+                    <i class="fas fa-calendar-day fa-4x"></i>
+                </button>
+            </a>
+            <a href="events">
+                <button class="white-button">
+                    <i class="fas fa-address-card fa-4x"></i>
+                </button>
+            </a>
             <button id="logout-button">
                 <i class="fas fa-sign-out-alt fa-4x"></i>
             </button>
+
         </nav>
 
 
@@ -55,7 +67,7 @@
                 <li>
                     <button class="left-menu-button">
                         dodaj nowe wydarzenie
-                        <i class="far fa-calendar-alt fa-2x"></i>
+                        <i class="fas fa-calendar-plus fa-2x"></i>
                     </button>
                 </li>
                 <li>
