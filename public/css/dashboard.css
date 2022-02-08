@@ -17,7 +17,7 @@
     justify-items: center;
 }
 
-.top-title{
+.top-title, .info-box>p{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +26,11 @@
     border-bottom: 1px solid #707070;
     text-align: center;
     width: 100%;
+}
 
+.info-box>p{
+    font: normal normal bold 2vw Segoe UI;
+    border-bottom: none;
 }
 
 .info-box{
@@ -42,7 +46,7 @@
 .information, .receipt, .event, .finance-info{
     background: rgba(255, 255, 255, 0.88);
     border-radius: 10px;
-    width: 96%;
+    width: 28vw;
 
 }
 
@@ -78,6 +82,8 @@
     font: normal normal normal 1vw Segoe UI;
     color: #564E4E;
     padding: 0 0.4vw;
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 /*----------------------------------------------------*/
@@ -190,4 +196,13 @@
 .bot-msg{
     font: normal normal bold 1.1vw Segoe UI;
     color: darkorange;
+}
+
+.max-lines {
+    display: block;/* or inline-block */
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 4em;
+    line-height: 1.8em;
 }

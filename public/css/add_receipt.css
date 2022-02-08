@@ -1,0 +1,91 @@
+.middle{
+    display: flex;
+    justify-content: center;
+}
+
+.add-rec{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border: 1px solid #91AA9D;
+    border-radius: 66px ;
+    opacity: 0.70;
+    width: 88%;
+    height: 96%;
+}
+
+
+.add-rec>p{
+    font: normal normal bold 2vw Segoe UI;
+    padding: 0.1vw;
+    color: #564E4E;
+    letter-spacing: 0.05vw;
+
+}
+
+.add-rec>textarea{
+    background: transparent;
+    text-align: left;
+    font: normal normal normal 1vw Segoe UI;
+    color: #201520;
+    margin: 1em;
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 0.5em;
+}
+
+.add-rec>button{
+    background: #8DE151 0 0 no-repeat padding-box;
+    border: 1px solid #91AA9D;
+    border-radius: 30px;
+    width: 55%;
+    text-align: center;
+    font: normal normal bold 1.3vw Segoe UI;
+    letter-spacing: 0.05vw;
+    color: #707070;
+    padding: 0.7vw;
+    margin: 1vw;
+}
+
+.avatar{
+    object-fit: cover;
+    border-radius: 50%;
+    justify-self: center;
+    padding-top: 0.15vw;
+    width: 3.6vw;
+    height: 3.6vw;
+}
+
+.people-box{
+    width: 88%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.amount-box, .person{
+    font: normal normal bold 2.4vw Segoe UI;
+    color: #564E4E;
+    display: flex;
+    justify-content: center;
+}
+
+.person{
+    font: normal normal bold 1.2vw Segoe UI;
+    align-items: center;
+}
+
+.amount-box>input[type="text"]{
+    background: transparent;
+    text-align: center;
+    font: bold normal normal 2vh Segoe UI;
+    color: #201520;
+    margin: 1em;
+    width: 75%;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 0.5em;
+}

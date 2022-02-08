@@ -26,7 +26,7 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 66%;
     height: 44vh;
@@ -43,7 +43,7 @@ form {
     width: 77%;
     height: 7vh;
     border-radius: 30px;
-    margin: 2em;
+    margin: 1.4em;
 }
 
 .button_register {
@@ -53,7 +53,6 @@ form {
     width: 55%;
     height: 4.5vh;
     text-align: center;
-    margin-top: 2em;
     font: normal normal bold 1.4vh Segoe UI;
     letter-spacing: 0.05vw;
     color: #707070;
@@ -88,4 +87,10 @@ screen and (max-width:540px) {
         margin: auto;
     }
 
+}
+
+form>p{
+    font: bold normal normal 2.5vh Segoe UI;
+    color: #201520;
+    margin: 0;
 }

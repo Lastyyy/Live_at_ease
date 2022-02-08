@@ -14,6 +14,11 @@
         </div>
         <div class="login-form">
             <form action="login" method="POST">
+                <?php if(isset($messages)):
+                    foreach($messages as $message): ?>
+                        <p><?= $message;?></p>
+                    <?php endforeach; ?>
+                <?php endif; ?>
                 <input name="email" type="text" placeholder="email">
                 <input name="password" type="password" placeholder="password">
                 <button class="button_login" type="submit">

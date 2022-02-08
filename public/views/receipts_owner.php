@@ -43,53 +43,30 @@
                 <i class="fas fa-address-card fa-4x"></i>
             </button>
         </a>
-        <button id="logout-button">
-            <i class="fas fa-sign-out-alt fa-4x"></i>
-        </button>
+        <form action="logout" method="POST">
+            <button id="logout-button" type="submit">
+                <i class="fas fa-sign-out-alt fa-4x"></i>
+            </button>
+        </form>
 
     </nav>
 
-
-    <div class="left-menu">
-
-        <ul>
-            <li>
-                <button class="left-menu-button">
-                    dodaj nową informację
-                    <i class="fas fa-info-circle fa-2x"></i>
-                </button>
-            </li>
-            <li>
-                <button class="left-menu-button">
-                    dodaj nowy rachunek
-                    <i class="fas fa-money-bill fa-2x"></i>
-                </button>
-            </li>
-            <li>
-                <button class="left-menu-button">
-                    dodaj nowe wydarzenie
-                    <i class="fas fa-calendar-plus fa-2x"></i>
-                </button>
-            </li>
-            <li>
-                <button class="left-menu-button">
-                    ustawienia
-                    <i class="fas fa-cog fa-2x"></i>
-                </button>
-            </li>
-        </ul>
-    </div>
+    <?php require_once 'left_menu.php'?>
 
 
     <div class="middle">
 
         <div class="buttons-container">
-            <button class="white-button-sec">
-                <i class="fas fa-users fa-3x"></i>
-            </button>
-            <button class="orange-button-sec">
-                <i class="fas fa-crown fa-3x"></i>
-            </button>
+            <a href="receipts_group">
+                <button class="white-button-sec">
+                    <i class="fas fa-users fa-3x"></i>
+                </button>
+            </a>
+            <a href="receipts_owner">
+                <button class="orange-button-sec">
+                    <i class="fas fa-crown fa-3x"></i>
+                </button>
+            </a>
         </div>
 
 
@@ -158,25 +135,7 @@
 
     </div>
 
-
-    <div class="group">
-
-        <ul>
-            <li>
-                <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                Imię Nazssssssssswisko
-            </li>
-            <li>
-                <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                Imię Nazwisko
-            </li>
-            <li>
-                <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                Imię Nazwisko
-            </li>
-
-        </ul>
-    </div>
+    <?php require_once 'group.php';?>
 </div>
 
 </body>

@@ -42,42 +42,18 @@
                     <i class="fas fa-address-card fa-4x"></i>
                 </button>
             </a>
-            <button id="logout-button">
-                <i class="fas fa-sign-out-alt fa-4x"></i>
-            </button>
+            <form action="logout" method="POST">
+                <button id="logout-button" type="submit">
+                    <i class="fas fa-sign-out-alt fa-4x"></i>
+                </button>
+            </form>
 
         </nav>
 
+        <?php require_once 'left_menu.php';
+        session_start();?>
 
-        <div class="left-menu">
 
-            <ul>
-                <li>
-                    <button class="left-menu-button">
-                        dodaj nową informację
-                        <i class="fas fa-info-circle fa-2x"></i>
-                    </button>
-                </li>
-                <li>
-                    <button class="left-menu-button">
-                        dodaj nowy rachunek
-                        <i class="fas fa-money-bill fa-2x"></i>
-                    </button>
-                </li>
-                <li>
-                    <button class="left-menu-button">
-                        dodaj nowe wydarzenie
-                        <i class="fas fa-calendar-plus fa-2x"></i>
-                    </button>
-                </li>
-                <li>
-                    <button class="left-menu-button">
-                        ustawienia
-                        <i class="fas fa-cog fa-2x"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
 
 
         <div class="middle">
@@ -89,28 +65,29 @@
                     <i class="fas fa-info-circle fa-2x"></i>
                 </div>
                 <div class="info-box">
+                    <?php if(empty($informations = $_SESSION["informations"])):?>
+                    <p>Brak!</p>
+                    <?php else:
+                        $i=0;
+                        foreach($informations as $information):?>
                     <div class="information">
                         <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/uploads/<?= $information->getUserImage();?>">
                             <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
+                                <p class="who"><?= $information->getName();?></p>
+                                <p class="when"><?= $information->getCreationDate();?></p>
                             </div>
                         </div>
-                        <p>Text of the informationText of the informationText of the information</p>
+                        <p class="max-lines"><?=$information->getText();?></p>
                     </div>
-                    <div class="information">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                            <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
-                            </div>
-                        </div>
-                        <p>Text of the informationText of the informationText of the information</p>
-                    </div>
+                    <?php $i=$i+1;
+                    if($i==2) break;?>
+                    <?php endforeach; endif; ?>
                 </div>
             </div>
+
+
+
 
             <div class="info-container">
                 <div class="top-title">
@@ -119,44 +96,37 @@
                     <i class="fas fa-money-bill fa-2x"></i>
                 </div>
                 <div class="info-box">
+                    <?php if(empty($receipts = $_SESSION["receipts"])):?>
+                        <p>Brak!</p>
+                    <?php else:
+                        $i=0;
+                        foreach($receipts as $receipt):?>
                     <div class="receipt">
                         <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/uploads/<?= $receipt->getUserImage();?>">
                             <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
+                                <p class="who"><?= $receipt->getName();?></p>
+                                <p class="when"><?= $receipt->getCreationDate();?></p>
                             </div>
                         </div>
-                        <p>Za wczorajszą pizzę, piwko i chipsiki</p>
-                        <p class="amount">89,99zł</p>
+                        <p class="max-lines"><?=$receipt->getText();?></p>
+                        <p class="amount"><?=$receipt->getAmount()."zł";?></p>
                         <div class="send-to">
                             <div>
                                 <p class="send">Prześlij</p>
-                                <p class="how-much">22,25zł</p>
+                                <p class="how-much"><?=number_format($receipt->getAmount()/floatval($receipt->getNumOfUsers()),2)."zł";?></p>
                             </div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
+                            <img class="avatar" alt="logo" src="public/uploads/<?= $receipt->getUserImage();?>">
                         </div>
                     </div>
-                    <div class="receipt">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                            <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
-                            </div>
-                        </div>
-                        <p>Za wczorajszą pizzę, piwko i chipsiki</p>
-                        <p class="amount">89,99zł</p>
-                        <div class="send-to">
-                            <div>
-                                <p class="send">Prześlij</p>
-                                <p class="how-much">22,25zł</p>
-                            </div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                        </div>
-                    </div>
+                    <?php $i=$i+1;
+                    if($i==2) break;?>
+                    <?php endforeach; endif; ?>
                 </div>
             </div>
+
+
+
 
             <div class="info-container">
                 <div class="top-title">
@@ -214,24 +184,8 @@
 
         </div>
 
+        <?php require_once 'group.php';?>
 
-        <div class="group">
-
-            <ul>
-                <li>
-                    <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                    Imię Nazssssssssswisko
-                </li>
-                <li>
-                    <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                    Imię Nazwisko
-                </li>
-                <li>
-                    <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                    Imię Nazwisko
-                </li>
-            </ul>
-        </div>
     </div>
 
 </body>

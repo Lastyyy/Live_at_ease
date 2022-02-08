@@ -121,3 +121,7 @@ nav {
     width: 3.6vw;
     height: 3.6vw;
 }
+
+a{
+    text-decoration: none;
+}
