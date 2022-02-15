@@ -17,7 +17,7 @@ class UserDetails {
         $this->image = $image;
     }
 
-    public function getId(): string
+    public function getId()
     {
         return $this->id;
     }

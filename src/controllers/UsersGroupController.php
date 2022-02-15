@@ -23,6 +23,10 @@ class UsersGroupController extends AppController {
         $usersGroup = $this->usersGroupRepository->getusersGroup();
         $_SESSION["usersGroup"] = $usersGroup;
 
+        $controller = "EventController";
+        $object = new $controller;
+        $object->dashboard();
+
         $this->render('dashboard', ['usersGroup' => $usersGroup]);
 
     }

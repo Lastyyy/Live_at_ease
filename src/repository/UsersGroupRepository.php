@@ -14,9 +14,11 @@ class UsersGroupRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT public.users.*, public.user_details.* FROM users inner join groups
-            on users.id_group=groups.id inner join user_details on users.id_user_details=user_details.id
-            WHERE users.id_group = :id_group and users.id != :id_user ORDER BY users.id DESC
+            SELECT public.users.*, public.user_details.name, public.user_details.surname,
+            public.user_details.age, public.user_details.birthday, public.user_details.image
+            FROM users inner join groups on users.id_group=groups.id inner join user_details 
+            on users.id_user_details=user_details.id WHERE users.id_group = :id_group and 
+            users.id != :id_user ORDER BY users.id ASC
         ');
         $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
         $stmt->bindParam(':id_group', $id_group, PDO::PARAM_INT);

@@ -28,7 +28,7 @@
 .add-rec>textarea{
     background: transparent;
     text-align: left;
-    font: normal normal normal 1vw Segoe UI;
+    font: normal normal normal 1.22vw Segoe UI;
     color: #201520;
     margin: 1em;
     width: 90%;
@@ -78,14 +78,15 @@
     align-items: center;
 }
 
-.amount-box>input[type="text"]{
+.add-rec>.amount-box>input[type="text"]{
     background: transparent;
     text-align: center;
-    font: bold normal normal 2vh Segoe UI;
+    font: bold normal normal 1.77vw Segoe UI;
     color: #201520;
     margin: 1em;
-    width: 75%;
+    width: 20%;
     border: none;
     border-bottom: 1px solid gray;
     padding: 0.5em;
 }
+
