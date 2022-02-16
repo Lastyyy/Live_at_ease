@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-.add-info{
+.add-event{
     margin-top: 5%;
     display: flex;
     flex-direction: column;
@@ -13,11 +13,11 @@
     border-radius: 66px ;
     opacity: 0.70;
     width: 88%;
-    height: 35vw;
+    height: 40vw;
 }
 
 
-.add-info>p{
+.add-event>p{
     font: normal normal bold 2.4vw Segoe UI;
     padding: 0.4em;
     color: #564E4E;
@@ -25,7 +25,7 @@
 
 }
 
-.add-info>textarea{
+.add-event>textarea{
     background: transparent;
     text-align: left;
     font: normal normal normal 1.22vw Segoe UI;
@@ -37,7 +37,7 @@
     padding: 0.5em;
 }
 
-.add-info>button{
+.add-event>button{
     background: #8DE151 0 0 no-repeat padding-box;
     border: 1px solid #91AA9D;
     border-radius: 30px;
@@ -50,3 +50,11 @@
     margin: 1.3vw;
 }
 
+.timestamp{
+    display: grid;
+
+}
+
+.timestamp>input{
+    margin: 0.2vw 0;
+}

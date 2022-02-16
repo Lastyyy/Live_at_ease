@@ -89,15 +89,20 @@
     margin: 0.4vw 0;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    grid-auto-flow: column;
+    height: auto;
+}
+
+.left, .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .paid-receipt{
     background: rgba(255, 255, 255, 0.7);
 }
 
-.receipt>div, .paid-receipt>div, .send-to{
+.receipt>.left>div, .paid-receipt>div, .send-to, .sent-to{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -115,7 +120,7 @@
     border-radius: 10px;
 }
 
-.receipt>div>img, .paid-receipt>div>img{
+.receipt>div>div>img, .receipt>div>img, .paid-receipt>div>img{
     object-fit: cover;
     border-radius: 50%;
     justify-self: center;
@@ -124,7 +129,7 @@
     height: 3.6vw;
 }
 
-.who, .how-much, .amount, .send, .sent{
+.who, .how-much, .how-much-paid, .amount, .send, .sent{
     font: normal normal bold 1vw Segoe UI;
     color: #564E4E;
     margin: 0;
@@ -138,8 +143,11 @@
     color: green;
 }
 
-.how-much{
+.how-much, .how-much-paid{
     font: normal normal bold 1.4vw Segoe UI;
+}
+
+.how-much{
     color: red;
 }
 
@@ -150,15 +158,15 @@
     margin: 0;
 }
 
-.receipt>p, .paid-receipt>p{
+.receipt>.left>p, .paid-receipt>.left>p{
     text-align: center;
-    font: normal normal bold 1.4vw Segoe UI;
+    font: normal normal bold 1.2vw Segoe UI;
     margin:0;
     color: #564E4E;
     padding: 0 0.4vw;
 }
 
-#waiting-one>.receipt>.amount{
+.receipt>.right>.amount{
     font: normal normal bold 2vw Segoe UI;
     padding: 0;
     margin: 1vw;
@@ -169,8 +177,4 @@
     font: normal normal bold 1vw Segoe UI;
     color: darkblue;
     margin: 0;
-}
-
-#paid-one>.paid-receipt>.sent-to>div>.how-much{
-    color: #564E4E;
 }

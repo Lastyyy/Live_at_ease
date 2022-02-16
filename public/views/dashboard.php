@@ -135,26 +135,26 @@
                     <i class="far fa-calendar-alt fa-2x"></i>
                 </div>
                 <div class="info-box">
-                    <div class="event">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                            <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="date">date</p>
+                    <?php if(empty($events = $_SESSION["events"])):?>
+                    <p>Brak!</p>
+                    <?php else:
+                    $i=0;
+                    foreach($events as $event):
+                        if($event->getDate()>date('Y-m-d H:i:s')):?>
+                            <div class="event">
+                                <div>
+                                    <img class="avatar" alt="logo" src="public/uploads/<?= $event->getUserImage();?>">
+                                    <div>
+                                        <p class="who"><?= $event->getName()." ".$event->getSurname();?></p>
+                                        <p class="date"><?= $event->getDate();?></p>
+                                    </div>
+                                </div>
+                                <p class="max-lines"><?=$event->getText();?></p>
                             </div>
-                        </div>
-                        <p>Text of the informationText of the informationText of the information</p>
-                    </div>
-                    <div class="event">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                            <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="date">date</p>
-                            </div>
-                        </div>
-                        <p>Text of the informationText of the informationText of the information</p>
-                    </div>
+                        <?php endif;
+                        $i=$i+1;
+                        if($i==2) break;?>
+                    <?php endforeach; endif; ?>
                 </div>
             </div>
 

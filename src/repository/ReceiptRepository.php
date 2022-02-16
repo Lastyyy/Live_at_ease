@@ -11,7 +11,7 @@ class ReceiptRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT public.receipts.*, user_details.image, user_details.name, user_details.surname
+            SELECT public.receipts.*, user_details.image, user_details.name, user_details.surname, receipts_users.paid
             FROM receipts inner join receipts_users on receipts.id=receipts_users.id_receipt inner join users on
             users.id=receipts.id_creator inner join user_details on users.id_user_details=user_details.id
             WHERE receipts_users.id_user = :id_user ORDER BY creation_date DESC
@@ -35,6 +35,7 @@ class ReceiptRepository extends Repository
                 $receipt['num_of_users']+1,
                 $receipt['name'],
                 $receipt['surname'],
+                $receipt['paid']
             );
         }
         return $result;

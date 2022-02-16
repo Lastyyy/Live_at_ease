@@ -13,7 +13,7 @@ class EventRepository extends Repository
         $stmt = $this->database->connect()->prepare('
             SELECT events.*, user_details.image, user_details.name, user_details.surname FROM events 
             LEFT JOIN users on events.id_user=users.id join user_details on users.id_user_details=user_details.id 
-            WHERE events.id_group = :id_group ORDER BY creation_date DESC
+            WHERE events.id_group = :id_group ORDER BY date DESC
         ');
         $stmt->bindParam(':id_group', $id_group, PDO::PARAM_INT);
         $stmt->execute();
@@ -43,7 +43,7 @@ class EventRepository extends Repository
     {
         $stmt = $this->database->connect()->prepare('
             INSERT INTO events (id_group, id_user, date, creation_date, text)
-            VALUES (?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
         ');
 
         $stmt->execute([

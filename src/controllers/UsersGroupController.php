@@ -3,6 +3,7 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Receipt.php';
 require_once __DIR__ . '/../repository/UsersGroupRepository.php';
+require_once __DIR__ .'/EventController.php';
 
 session_regenerate_id();
 session_start();

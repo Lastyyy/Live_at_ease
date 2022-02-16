@@ -18,7 +18,7 @@
             </a>
         </li>
         <li>
-            <a href="addInformation">
+            <a href="addEvent">
                 <button class="left-menu-button">
                     dodaj nowe wydarzenie
                     <i class="fas fa-calendar-plus fa-2x"></i>

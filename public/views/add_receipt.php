@@ -61,9 +61,9 @@
                 <?php endforeach; ?>
             <?php endif; ?>
             <textarea name="info_text" rows="4" maxlength="99"
-                      placeholder="Wpisz informację dotyczącą rachunku!"></textarea>
+                      placeholder="Wpisz informację dotyczącą rachunku!" required></textarea>
             <div class="amount-box">
-                <input name="amount" type="text" placeholder="Kwota">
+                <input name="amount" type="text" placeholder="Kwota" required/>
                 <p>&nbsp;zł</p>
             </div>
             <p>Z kim chcesz podzielić rachunek?</p>
@@ -75,7 +75,7 @@
                 <div class="person">
                     <input type="checkbox" name="checkbox[]" checked>
                     <img class="avatar" alt="logo" src="public/uploads/<?= $userDetails->getImage();?>">
-                    <p class="who">&nbsp;&nbsp; <?= $userDetails->getName().$userDetails->getId();?></p>
+                    <p class="who">&nbsp;&nbsp; <?= $userDetails->getName()/*.$userDetails->getId();*/?></p>
                 </div>
                 <?php endforeach; endif; ?>
             </div>

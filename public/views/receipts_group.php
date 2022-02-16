@@ -78,102 +78,40 @@
                     <i class="fas fa-money-bill fa-2x"></i>
                 </div>
 
-                <div class="receipts-box" id="waiting-one">
-
+                <div class="receipts-box">
+                    <?php if(empty($receipts = $_SESSION["receipts"])):?>
+                        <p>Brak rachunków do zapłaty!</p>
+                    <?php else:
+                    $counter=0;
+                    foreach($receipts as $receipt):
+                    if($receipt->getPaid()==False):
+                    $counter=1;?>
                     <div class="receipt">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
+                        <div class="left">
                             <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
+                                <img class="avatar" alt="logo" src="public/uploads/<?= $receipt->getUserImage();?>">
+                                <div>
+                                    <p class="who"><?= $receipt->getName();?></p>
+                                    <p class="when"><?= $receipt->getCreationDate();?></p>
+                                </div>
                             </div>
+                            <p><?=$receipt->getText();?></p>
                         </div>
-                        <p>Za wczorajszą pizzę, piwko i chipsiki</p>
-                        <p class="amount">88,99zł</p>
-                        <div class="send-to">
-                            <div>
-                                <p class="send">Prześlij</p>
-                                <p class="how-much">22,25zł</p>
+                        <div class="right">
+                            <p class="amount"><?=$receipt->getAmount()."zł";?></p>
+                            <div class="send-to">
+                                <div>
+                                    <p class="send">Prześlij</p>
+                                    <p class="how-much"><?=number_format($receipt->getAmount()/floatval($receipt->getNumOfUsers()),2)."zł";?></p>
+                                </div>
+                                <img class="avatar" alt="logo" src="public/uploads/<?= $receipt->getUserImage();?>">
                             </div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
                         </div>
                     </div>
-
-                    <div class="receipt">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                            <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
-                            </div>
-                        </div>
-                        <p>Za wczorajszą pizzę, piwko i chipsiki</p>
-                        <p class="amount">88,99zł</p>
-                        <div class="send-to">
-                            <div>
-                                <p class="send">Prześlij</p>
-                                <p class="how-much">22,25zł</p>
-                            </div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                        </div>
-                    </div>
-
-                    <div class="receipt">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                            <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
-                            </div>
-                        </div>
-                        <p>Za wczorajszą pizzę, piwko i chipsiki</p>
-                        <p class="amount">88,99zł</p>
-                        <div class="send-to">
-                            <div>
-                                <p class="send">Prześlij</p>
-                                <p class="how-much">22,25zł</p>
-                            </div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                        </div>
-                    </div>
-
-                    <div class="receipt">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                            <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
-                            </div>
-                        </div>
-                        <p>Za wczorajszą pizzę, piwko i chipsiki</p>
-                        <p class="amount">88,99zł</p>
-                        <div class="send-to">
-                            <div>
-                                <p class="send">Prześlij</p>
-                                <p class="how-much">22,25zł</p>
-                            </div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                        </div>
-                    </div>
-
-                    <div class="receipt">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                            <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
-                            </div>
-                        </div>
-                        <p>Za wczorajszą pizzę, piwko i chipsiki</p>
-                        <p class="amount">88,99zł</p>
-                        <div class="send-to">
-                            <div>
-                                <p class="send">Prześlij</p>
-                                <p class="how-much">22,25zł</p>
-                            </div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                        </div>
-                    </div>
+                    <?php endif; endforeach;
+                    if($counter==0):?>
+                        <p>Brak rachunków do zapłaty!</p>
+                    <?php endif; endif;?>
                 </div>
             </div>
 
@@ -184,27 +122,40 @@
                     <i class="fas fa-money-bill fa-2x"></i>
                 </div>
 
-                <div class="receipts-box" id="paid-one">
-
-                    <div class="paid-receipt">
-                        <div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                            <div>
-                                <p class="who">Imię Nazwisko</p>
-                                <p class="when">when</p>
+                <div class="receipts-box">
+                    <?php if(empty($receipts = $_SESSION["receipts"])):?>
+                    <p>Brak zapłaconych rachunków</p>
+                    <?php else:
+                        $counter=0;
+                        foreach($receipts as $receipt):
+                        if($receipt->getPaid()==True):
+                        $counter=1;?>
+                        <div class="receipt" id="paid-one">
+                            <div class="left">
+                                <div>
+                                    <img class="avatar" alt="logo" src="public/uploads/<?= $receipt->getUserImage();?>">
+                                    <div>
+                                        <p class="who"><?= $receipt->getName();?></p>
+                                        <p class="when"><?= $receipt->getCreationDate();?></p>
+                                    </div>
+                                </div>
+                                <p><?=$receipt->getText();?></p>
+                            </div>
+                            <div class="right">
+                                <p class="amount"><?=$receipt->getAmount()."zł";?></p>
+                                <div class="sent-to">
+                                    <div>
+                                        <p class="sent">Zapłacono</p>
+                                        <p class="how-much-paid"><?=number_format($receipt->getAmount()/floatval($receipt->getNumOfUsers()),2)."zł";?></p>
+                                    </div>
+                                    <img class="avatar" alt="logo" src="public/uploads/<?= $receipt->getUserImage();?>">
+                                </div>
                             </div>
                         </div>
-                        <p>Za wczorajszą pizzę, piwko i chipsiki</p>
-                        <p class="amount">88,99zł</p>
-                        <div class="sent-to">
-                            <div>
-                                <p class="send">Zapłacono</p>
-                                <p class="how-much">22,25zł</p>
-                            </div>
-                            <img class="avatar" alt="logo" src="public/img/p1.jpg">
-                        </div>
-                    </div>
-
+                    <?php endif; endforeach;
+                    if($counter==0):?>
+                    <p>Brak zapłaconych rachunków</p>
+                    <?php endif; endif;?>
                 </div>
             </div>
 

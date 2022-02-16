@@ -29,7 +29,22 @@ class ReceiptController extends AppController {
         $object->dashboard();
 
         $this->render('dashboard', ['receipts' => $receipts]);
+    }
 
+    public function receipts_group()
+    {
+        $receipts = $this->receiptRepository->getReceipts();
+        $_SESSION["receipts"] = $receipts;
+
+        $this->render('receipts_group');
+    }
+
+    public function receipts_owner()
+    {
+        $receipts = $this->receiptRepository->getReceipts();
+        $_SESSION["receipts"] = $receipts;
+
+        $this->render('receipts_owner');
     }
 
     public function addReceipt()
@@ -43,7 +58,7 @@ class ReceiptController extends AppController {
                 date('Y-m-d H:i:s'),
                 null,
                 count($_POST['checkbox']),
-                $_POST['checkbox'], null
+                $_POST['checkbox'], null, null
             );
             $this->receiptRepository->addReceipt($receipt);
             //TODO ZMIENIC DASHBOARD NA INFORMATIONS

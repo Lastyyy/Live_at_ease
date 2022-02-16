@@ -9,8 +9,9 @@ class Receipt{
     private $num_of_users;
     private $name;
     private $surname;
+    private $paid;
 
-    public function __construct($amount, $id_creator, $text, $creation_date, $user_image, $num_of_users, $name, $surname)
+    public function __construct($amount, $id_creator, $text, $creation_date, $user_image, $num_of_users, $name, $surname, $paid)
     {
         $this->amount = $amount;
         $this->id_creator = $id_creator;
@@ -20,6 +21,7 @@ class Receipt{
         $this->num_of_users = $num_of_users;
         $this->name = $name;
         $this->surname = $surname;
+        $this->paid = $paid;
     }
 
     public function getAmount()
@@ -60,6 +62,11 @@ class Receipt{
     public function getSurname()
     {
         return $this->surname;
+    }
+
+    public function getPaid()
+    {
+        return $this->paid;
     }
 
 }
