@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" type = "text/css" href = "public/css/ui.css">
-    <link rel = "stylesheet" type = "text/css" href = "public/css/add_event.css">
+    <link rel = "stylesheet" type = "text/css" href = "public/css/add_user_to_group.css">
     <script src="https://kit.fontawesome.com/c65726fa38.js" crossorigin="anonymous"></script>
-    <title>Add the event!</title>
+    <title>Add the information!</title>
 </head>
 <body>
 
@@ -25,17 +25,17 @@
             </button>
         </a>
         <a href="info">
-            <button class="white-button">
+            <button class="orange-button">
                 <i class="fas fa-info-circle fa-4x"></i>
             </button>
         </a>
-        <a href="event">
+        <a href="receipts_group">
             <button class="white-button">
                 <i class="fas fa-money-bill fa-4x"></i>
             </button>
         </a>
         <a href="event">
-            <button class="orange-button">
+            <button class="white-button">
                 <i class="fas fa-calendar-day fa-4x"></i>
             </button>
         </a>
@@ -55,23 +55,18 @@
     <?php require_once 'left_menu.php'?>
 
     <div class="middle">
-        <form class="add-event" action="addEvent" method="POST">
-            <p>DODAWANIE NOWEGO WYDARZENIA</p>
+        <form class="add-info" action="addUserToGroup" method="POST">
+            <br><br>
+            <p>DODAJ NOWEGO UŻYTKOWNIKA DO GRUPY</p>
+            <br><br><br><br>
             <?php if(isset($messages)):
                 foreach($messages as $message): ?>
                     <p><?= $message;?></p>
                 <?php endforeach; ?>
             <?php endif; ?>
-            <div class="timestamp">
-                <input type="date" name="date"
-                       value="<?=date("Y-m-d", strtotime('+1 day'))?>"
-                       min="<?=date("Y-m-d");?>" required>
-                <input type="time" name="time"
-                       value="12:00" required>
-            </div>
-            <textarea name="info_text" rows="7" maxlength="254"
-                      placeholder="Wpisz opis wydarzenia!" required></textarea>
-            <button type="submit">Dodaj wydarzenie</button>
+            <textarea name="code" rows="1" maxlength="6" minlength="6"
+                      placeholder="Wpisz kod użytkownika, którego chcesz dodać" required></textarea>
+            <button type="submit">Dodaj użytkownika</button>
         </form>
     </div>
 

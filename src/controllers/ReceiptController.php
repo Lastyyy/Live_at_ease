@@ -3,7 +3,7 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Receipt.php';
 require_once __DIR__ . '/../repository/ReceiptRepository.php';
-require_once 'UsersGroupController.php';
+require_once 'EventController.php';
 
 session_regenerate_id();
 session_start();
@@ -24,7 +24,7 @@ class ReceiptController extends AppController {
         $receipts = $this->receiptRepository->getReceipts();
         $_SESSION["receipts"] = $receipts;
 
-        $controller = "UsersGroupController";
+        $controller = "EventController";
         $object = new $controller;
         $object->dashboard();
 
@@ -33,6 +33,10 @@ class ReceiptController extends AppController {
 
     public function receipts_group()
     {
+        $usersGroupRepository = new UsersGroupRepository();
+        $usersGroup = $usersGroupRepository->getUsersGroup();
+        $_SESSION['usersGroup'] = $usersGroup;
+
         $receipts = $this->receiptRepository->getReceipts();
         $_SESSION["receipts"] = $receipts;
 
@@ -41,6 +45,10 @@ class ReceiptController extends AppController {
 
     public function receipts_owner()
     {
+        $usersGroupRepository = new UsersGroupRepository();
+        $usersGroup = $usersGroupRepository->getUsersGroup();
+        $_SESSION['usersGroup'] = $usersGroup;
+
         $receipts = $this->receiptRepository->getReceipts();
         $_SESSION["receipts"] = $receipts;
 
@@ -49,7 +57,17 @@ class ReceiptController extends AppController {
 
     public function addReceipt()
     {
-        if($this->isPost())
+        $usersGroupRepository = new UsersGroupRepository();
+        $usersGroup = $usersGroupRepository->getUsersGroup();
+        $_SESSION['usersGroup'] = $usersGroup;
+
+        $this->isPost() ? $amount_str = str_replace(',', '.', $_POST['amount']) : $amount_str=null;
+        //checking if amount is float and > 1zł
+        if($this->isPost() and (floatval($amount_str) < 1.00 or strval(floatval($amount_str)) != $amount_str)) {
+            return $this->render('add_receipt', ['messages' => ['Rachunek musi wynosić przynajmniej 1 zł']]);
+        }
+
+        if($this->isPost() and isset($_POST['checkbox']))
         {
             $receipt = new Receipt(
                 round(floatval(str_replace(',', '.', $_POST["amount"])),2),
@@ -61,12 +79,12 @@ class ReceiptController extends AppController {
                 $_POST['checkbox'], null, null
             );
             $this->receiptRepository->addReceipt($receipt);
-            //TODO ZMIENIC DASHBOARD NA INFORMATIONS
+
             $url = "http://$_SERVER[HTTP_HOST]";
             header("Location: {$url}/dashboard");
-            return $this->render('dashboard');
 
         }
+        if(!isset($_POST['checkbox']) and $this->isPost()) return $this->render('add_receipt', ['messages' =>['Nie wybrano nikogo do podziału!']]);
         return $this->render('add_receipt');
     }
 

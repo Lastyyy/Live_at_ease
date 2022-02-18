@@ -1,9 +1,6 @@
 body {
     background: transparent linear-gradient(180deg, #3089A9 0%, #91AA9D 100%) 0 0 no-repeat padding-box;
-    margin: 0
-}
-
-.login-container {
+    margin: 0;
     width: 100vw;
     height: 100vh;
 
@@ -18,64 +15,61 @@ body {
     width: 50%;
 }
 
-.login-form {
+.right {
     text-align: center;
-    width: 50%;
+    width: 40%;
 }
 
-form {
+.right>p, .right>div>p{
+    font: bold normal normal 3vh Segoe UI;
+    color: forestgreen;
+    margin: 1vw 0;
+    padding: 0.5em;
+}
+
+.right>div{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    width: 66%;
-    height: 44vh;
-
-    background: #FFFFFF 0 0 no-repeat padding-box;
-    border: 1px solid #91AA9D;
-    border-radius: 66px;
-    opacity: 0.70;
+    justify-content: center;
 }
 
-.button_login {
+.right>div>.code{
+    font: bold normal normal 5vh Segoe UI;
+    color: red;
+    margin:0;
+    padding:0;
+    background: rgba(255, 255, 255, 0.44);
+    border-radius: 10px;
+    width: 14vw;
+}
+
+
+
+.right>a>.create-button, #logout-button{
     background: #FFC573 0 0 no-repeat padding-box;
-    border: none;
-    width: 77%;
-    height: 7vh;
-    border-radius: 30px;
-    margin: 1.4em;
-    color: darkslateblue;
-
-}
-
-.button_register {
-    background: #8DE151 0 0 no-repeat padding-box;
     border: 1px solid #91AA9D;
     border-radius: 30px;
-    width: 100%;
-    height: 4.5vh;
+    width: 60%;
+    height: 7vh;
     text-align: center;
-    font: normal normal bold 1.4vh Segoe UI;
+    font: normal normal bold 2.5vh Segoe UI;
     letter-spacing: 0.05vw;
     color: darkslateblue;
+}
 
+#logout-button{
+    background: #8DE151 0 0 no-repeat padding-box;
+    font: normal normal bold 1.8vh Segoe UI;
+    height: 4vh;
+    width: 35%;
 }
 
 a{
     width: 55%;
 }
 
-input {
-    background: transparent;
-    text-align: left;
-    font: normal normal normal 2vh Segoe UI;
-    color: #70707080;
-    margin: 1em;
-    width: 75%;
-    border: none;
-    border-bottom: 1px solid gray;
-    padding: 0.5em;
-}
+
 
 @media screen and (max-device-width:540px),
 screen and (max-width:540px) {

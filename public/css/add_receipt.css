@@ -17,12 +17,16 @@
 }
 
 
-.add-rec>p{
+.add-rec>p, .people-box>.message{
     font: normal normal bold 2vw Segoe UI;
     padding: 0.1vw;
     color: #564E4E;
     letter-spacing: 0.05vw;
+}
 
+.add-rec>.message, .people-box>.message{
+    font-size: 1.3vw;
+    color: orangered;
 }
 
 .add-rec>textarea{
@@ -68,21 +72,42 @@
 
 .amount-box, .person{
     font: normal normal bold 2.4vw Segoe UI;
-    color: #564E4E;
+    color: darkmagenta;
     display: flex;
     justify-content: center;
+}
+
+.amount-box{
+    color: #564E4E;
 }
 
 .person{
     font: normal normal bold 1.2vw Segoe UI;
     align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.person>label{
+    display: flex;
+}
+
+.person>label{
+    opacity:0.5;
+}
+
+.person input[type="checkbox"]{
+    display: none;
+}
+
+.person input[type="checkbox"]:checked + label{
+    opacity:1;
 }
 
 .add-rec>.amount-box>input[type="text"]{
     background: transparent;
     text-align: center;
-    font: bold normal normal 1.77vw Segoe UI;
-    color: #201520;
+    font: bold normal normal 1.88vw Segoe UI;
+    color: darkmagenta;
     margin: 1em;
     width: 20%;
     border: none;

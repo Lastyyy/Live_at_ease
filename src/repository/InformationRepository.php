@@ -7,7 +7,7 @@ class InformationRepository extends Repository
 {
     public function getInformations(): array
     {
-        $id_group = $_SESSION["id_group"];
+        $id_group = $_SESSION['id_group'];
         $result = [];
 
         $stmt = $this->database->connect()->prepare('

@@ -5,8 +5,7 @@ require_once __DIR__.'/../models/User.php';
 
 class UserRepository extends Repository
 {
-
-    public function getUser(string $email): ?User
+    public function getUser(string $email, bool $code_needed=False): ?User
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.users WHERE email = :email
@@ -20,12 +19,17 @@ class UserRepository extends Repository
             return null;
         }
 
-        return new User(
+        $return_user = new User(
             $user['id'],
             $user['email'],
             $user['password'],
             $user['id_group'] ?: 0,
-            $user['id_user_details']
+            $user['id_user_details'],
+            $user['type']
         );
+
+        if($code_needed) $return_user->setCode($user['code']);
+
+        return $return_user;
     }
 }

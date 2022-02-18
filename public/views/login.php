@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['id_user'])){
+    $url = "http://$_SERVER[HTTP_HOST]";
+    header("Location: {$url}/dashboard");
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" type = "text/css" href = "public/css/login.css">
-    <title>Login</title>
+    <title>Live at Ease!</title>
 </head>
 <body>
     <div class="login-container">
@@ -19,12 +25,12 @@
                         <p><?= $message;?></p>
                     <?php endforeach; ?>
                 <?php endif; ?>
-                <input name="email" type="text" placeholder="email">
-                <input name="password" type="password" placeholder="password">
+                <input name="email" type="text" placeholder="email" required>
+                <input name="password" type="password" placeholder="hasło" required>
                 <button class="button_login" type="submit">
                     <img src="public/img/login_button.svg" width="60%" height="60%">
                 </button>
-                <button class="button_register">Register</button>
+                <a href="register"> <button type="button" class="button_register">Rejestracja</button> </a>
             </form>
         </div>
     </div>

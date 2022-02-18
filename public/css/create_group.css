@@ -1,6 +1,13 @@
 body {
     background: transparent linear-gradient(180deg, #3089A9 0%, #91AA9D 100%) 0 0 no-repeat padding-box;
-    margin: 0
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-container {
@@ -13,22 +20,12 @@ body {
     align-items: center;
 }
 
-.logo {
-    text-align: center;
-    width: 50%;
-}
-
-.login-form {
-    text-align: center;
-    width: 50%;
-}
-
 form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 66%;
+    width: 35%;
     height: 44vh;
 
     background: #FFFFFF 0 0 no-repeat padding-box;
@@ -37,32 +34,38 @@ form {
     opacity: 0.70;
 }
 
-.button_login {
-    background: #FFC573 0 0 no-repeat padding-box;
-    border: none;
-    width: 77%;
-    height: 7vh;
-    border-radius: 30px;
-    margin: 1.4em;
-    color: darkslateblue;
-
+.logo {
+    text-align: center;
+    width: 50%;
 }
 
-.button_register {
+.right {
+    text-align: center;
+    width: 40%;
+}
+
+form>textarea{
+    background: transparent;
+    text-align: left;
+    font: normal normal normal 1.22vw Segoe UI;
+    color: #201520;
+    margin: 1em;
+    width: 85%;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 0.5em;
+}
+
+.button_login{
     background: #8DE151 0 0 no-repeat padding-box;
     border: 1px solid #91AA9D;
     border-radius: 30px;
-    width: 100%;
-    height: 4.5vh;
+    width: 60%;
+    height: 7vh;
     text-align: center;
-    font: normal normal bold 1.4vh Segoe UI;
+    font: normal normal bold 2.5vh Segoe UI;
     letter-spacing: 0.05vw;
     color: darkslateblue;
-
-}
-
-a{
-    width: 55%;
 }
 
 input {

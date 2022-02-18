@@ -178,3 +178,9 @@
     color: darkblue;
     margin: 0;
 }
+
+.receipts-box>p{
+    color: #564E4E;
+    font: normal normal bold 1.5vw Segoe UI;
+    border-bottom: none;
+}

@@ -26,7 +26,7 @@
             </a>
         </li>
         <li>
-            <a href="addInformation">
+            <a href="addUserToGroup">
                 <button class="left-menu-button">
                     ustawienia
                     <i class="fas fa-cog fa-2x"></i>

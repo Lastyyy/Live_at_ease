@@ -3,7 +3,7 @@ body {
     margin: 0
 }
 
-.login-container {
+.register-container {
     width: 100vw;
     height: 100vh;
 
@@ -18,37 +18,38 @@ body {
     width: 50%;
 }
 
-.login-form {
+.register-form {
     text-align: center;
     width: 50%;
 }
 
-form {
+form{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     width: 66%;
-    height: 44vh;
-
+    height: 75vh;
+    position: relative;
     background: #FFFFFF 0 0 no-repeat padding-box;
     border: 1px solid #91AA9D;
     border-radius: 66px;
     opacity: 0.70;
 }
 
-.button_login {
+.button_register {
     background: #FFC573 0 0 no-repeat padding-box;
-    border: none;
-    width: 77%;
-    height: 7vh;
+    border: 1px solid #91AA9D;
     border-radius: 30px;
-    margin: 1.4em;
-    color: darkslateblue;
-
+    width: 75%;
+    height: 6vh;
+    text-align: center;
+    font: normal normal bold 1.4vh Segoe UI;
+    letter-spacing: 0.05vw;
+    color: #707070;
 }
 
-.button_register {
+.button_login {
     background: #8DE151 0 0 no-repeat padding-box;
     border: 1px solid #91AA9D;
     border-radius: 30px;
@@ -57,24 +58,36 @@ form {
     text-align: center;
     font: normal normal bold 1.4vh Segoe UI;
     letter-spacing: 0.05vw;
-    color: darkslateblue;
-
+    color: #707070;
 }
 
 a{
-    width: 55%;
+    width: 45%;
 }
 
-input {
+input, .select-items div,.select-selected, select{
     background: transparent;
     text-align: left;
     font: normal normal normal 2vh Segoe UI;
     color: #70707080;
-    margin: 1em;
+    margin: 0.1vh 0;
     width: 75%;
     border: none;
     border-bottom: 1px solid gray;
     padding: 0.5em;
+}
+
+select{
+    color: black;
+}
+
+.select-items {
+    position: absolute;
+    background-color: lightblue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
 }
 
 @media screen and (max-device-width:540px),
@@ -100,4 +113,12 @@ form>p{
     font: bold normal normal 2.5vh Segoe UI;
     color: #201520;
     margin: 0;
+}
+
+select {
+    position: relative;
+}
+
+.no-valid{
+    border: 3px solid red;
 }

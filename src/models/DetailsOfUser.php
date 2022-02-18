@@ -1,20 +1,22 @@
 <?php
 
-class UserDetails {
+class DetailsOfUser{
     private $id;
     private $name;
     private $surname;
-    private $age;
     private $birthday;
     private $image;
+    private $type;
+    private $description;
 
-    public function __construct($id, $name, $surname, $age, $birthday, $image) {
+    public function __construct($id, $name, $surname, $birthday, $image, $type, $description=null) {
         $this->id = $id;
         $this->name = $name;
         $this->surname = $surname;
-        $this->age = $age;
         $this->birthday = $birthday;
         $this->image = $image;
+        $this->type = $type;
+        $this->description = $description;
     }
 
     public function getId()
@@ -32,11 +34,6 @@ class UserDetails {
         return $this->surname;
     }
 
-    public function getAge()
-    {
-        return $this->age;
-    }
-
     public function getBirthday()
     {
         return $this->birthday;
@@ -46,4 +43,20 @@ class UserDetails {
     {
         return $this->image;
     }
+
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
 }

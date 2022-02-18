@@ -7,7 +7,7 @@ class ReceiptRepository extends Repository
 {
     public function getReceipts(): array
     {
-        $id_user = $_SESSION["id_user"];
+        $id_user = $_SESSION['id_user'];
         $result = [];
 
         $stmt = $this->database->connect()->prepare('

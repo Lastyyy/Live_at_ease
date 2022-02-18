@@ -3,7 +3,9 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Information.php';
 require_once __DIR__ . '/../repository/InformationRepository.php';
-require_once __DIR__ .'/ReceiptController.php';
+require_once __DIR__ . '/../repository/UsersGroupRepository.php';
+require_once __DIR__ .'/UsersGroupController.php';
+require_once __DIR__ . '/../models/DetailsOfUser.php';
 
 session_regenerate_id();
 session_start();
@@ -21,8 +23,11 @@ class InformationController extends AppController {
 
     public function dashboard()
     {
-        $informations = $this->informationRepository->getInformations();
+        $usersGroupRepository = new UsersGroupRepository();
+        $usersGroup = $usersGroupRepository->getUsersGroup();
+        $_SESSION['usersGroup'] = $usersGroup;
 
+        $informations = $this->informationRepository->getInformations();
         $_SESSION["informations"] = $informations;
 
         $controller = "ReceiptController";
@@ -34,6 +39,10 @@ class InformationController extends AppController {
 
     public function addInformation()
     {
+        $usersGroupRepository = new UsersGroupRepository();
+        $usersGroup = $usersGroupRepository->getUsersGroup();
+        $_SESSION['usersGroup'] = $usersGroup;
+
         if($this->isPost())
         {
             $information = new Information(
@@ -46,11 +55,22 @@ class InformationController extends AppController {
             $this->informationRepository->addInformation($information);
             //TODO ZMIENIC DASHBOARD NA INFORMATIONS
             $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/dashboard");
-            return $this->render('dashboard');
+            header("Location: {$url}/info");
 
         }
+
         return $this->render('add_info');
     }
 
+    public function info()
+    {
+        $usersGroupRepository = new UsersGroupRepository();
+        $usersGroup = $usersGroupRepository->getUsersGroup();
+        $_SESSION['usersGroup'] = $usersGroup;
+
+        $informations = $this->informationRepository->getInformations();
+        $_SESSION["informations"] = $informations;
+
+        $this->render('info');
+    }
 }

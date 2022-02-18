@@ -4,6 +4,8 @@ require_once 'AppController.php';
 require_once __DIR__ .'/../models/Event.php';
 require_once __DIR__ . '/../repository/EventRepository.php';
 require_once __DIR__ .'/EventController.php';
+require_once __DIR__ . '/../repository/UsersGroupRepository.php';
+
 
 session_regenerate_id();
 session_start();
@@ -22,18 +24,17 @@ class EventController extends AppController {
     public function dashboard()
     {
         $events = $this->eventRepository->getEvents();
-
-        $_SESSION["events"] = $events;
-
-        /*$controller = "ReceiptController";
-        $object = new $controller;
-        $object->dashboard();*/
+        $_SESSION['events'] = $events;
 
         $this->render('dashboard', ['events' => $events]);
     }
 
     public function addEvent()
     {
+        $usersGroupRepository = new UsersGroupRepository();
+        $usersGroup = $usersGroupRepository->getUsersGroup();
+        $_SESSION['usersGroup'] = $usersGroup;
+
         if($this->isPost())
         {
             $event = new Event(
@@ -45,13 +46,23 @@ class EventController extends AppController {
                 null, null, null
             );
             $this->eventRepository->addEvent($event);
-            //TODO ZMIENIC DASHBOARD NA INFORMATIONS
+            //TODO ZMIENIC DASHBOARD NA EVENTS
             $url = "http://$_SERVER[HTTP_HOST]";
-            header("Location: {$url}/dashboard");
-            return $this->render('dashboard');
+            header("Location: {$url}/event");
 
         }
         return $this->render('add_event');
     }
 
+    public function event()
+    {
+        $usersGroupRepository = new UsersGroupRepository();
+        $usersGroup = $usersGroupRepository->getUsersGroup();
+        $_SESSION['usersGroup'] = $usersGroup;
+
+        $events = $this->eventRepository->getEvents();
+        $_SESSION["events"] = $events;
+
+        $this->render('event');
+    }
 }

@@ -1,13 +1,15 @@
+<?php require_once 'session_user.php';?>
+<?php require_once 'session_group.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" type = "text/css" href = "public/css/normal_ui.css">
+    <link rel = "stylesheet" type = "text/css" href = "public/css/ui.css">
     <link rel = "stylesheet" type = "text/css" href = "public/css/add_receipt.css">
     <script src="https://kit.fontawesome.com/c65726fa38.js" crossorigin="anonymous"></script>
-    <title>Dashboard</title>
+    <title>Add the receipt!</title>
 </head>
 <body>
 
@@ -32,12 +34,12 @@
                 <i class="fas fa-money-bill fa-4x"></i>
             </button>
         </a>
-        <a href="receipts_group">
+        <a href="event">
             <button class="white-button">
                 <i class="fas fa-calendar-day fa-4x"></i>
             </button>
         </a>
-        <a href="events">
+        <a href="profile">
             <button class="white-button">
                 <i class="fas fa-address-card fa-4x"></i>
             </button>
@@ -57,7 +59,7 @@
             <p>DODAWANIE NOWEGO RACHUNKU</p>
             <?php if(isset($messages)):
                 foreach($messages as $message): ?>
-                    <p><?= $message;?></p>
+                    <p class="message"><?= $message;?></p>
                 <?php endforeach; ?>
             <?php endif; ?>
             <textarea name="info_text" rows="4" maxlength="99"
@@ -69,15 +71,23 @@
             <p>Z kim chcesz podzielić rachunek?</p>
             <div class="people-box">
                 <?php if(empty($usersGroup = $_SESSION["usersGroup"])):?>
-                <p>Brak współlokatorów w grupie</p>
+                    <p class="message">Brak współlokatorów w grupie</p>
                 <?php else:
-                foreach($usersGroup as $userDetails):?>
+                $counter=0;
+                foreach($usersGroup as $userDetails):
+                if($userDetails->getType()==False):
+                $counter+=1;?>
                 <div class="person">
-                    <input type="checkbox" name="checkbox[]" checked>
-                    <img class="avatar" alt="logo" src="public/uploads/<?= $userDetails->getImage();?>">
-                    <p class="who">&nbsp;&nbsp; <?= $userDetails->getName()/*.$userDetails->getId();*/?></p>
+                    <input type="checkbox" id="checkbox<?=$counter?>" name="checkbox[]">
+                    <label for="checkbox<?=$counter?>">
+                        <img class="avatar" alt="logo" src="public/uploads/<?= $userDetails->getImage();?>">
+                        <p class="who">&nbsp;&nbsp; <?= $userDetails->getName()/*.$userDetails->getId();*/?></p>
+                    </label>
                 </div>
-                <?php endforeach; endif; ?>
+                <?php endif; endforeach;
+                if($counter==0):?>
+                    <p class="message">Brak współlokatorów w grupie</p>
+                <?php endif; endif;?>
             </div>
             <button type="submit">Dodaj rachunek</button>
         </form>
