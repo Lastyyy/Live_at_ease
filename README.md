@@ -1,4 +1,4 @@
-# **Live at Ease**
+#**<div style="text-align: center"> Live at Ease</div>**
 
 Aplikacja ma na celu ułatwienie mieszkania we współdzielonym mieszkaniu, szczególnie osobom dopiero poznającym się oraz mówiącym różnymi językami.
 Głównym celem jest usprawnienie komunikacji, ustalania wspólnych wydarzeń oraz dzielenia się kosztami.
