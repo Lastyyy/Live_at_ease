@@ -17,7 +17,8 @@ class SecurityController extends AppController {
         }
 
         $email = $_POST['email'];
-        $password = $_POST['password'];
+        $password = ''.$_POST['password'];
+
 
         $user = $userRepository->getUser($email, True);
 
@@ -29,7 +30,8 @@ class SecurityController extends AppController {
             return $this->render('login', ['messages' => ['User with this email does not exist!']]);
         }*/
 
-        if ($user->getPassword() !== $password) {
+        if (!password_verify($password,$user->getPassword()))
+        {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
@@ -86,6 +88,7 @@ class SecurityController extends AppController {
         if ($password !== $confirmedPassword){
             return $this->render('register', ['messages' => ['Hasła nie zgadzają się!']]);
         }
+        $password = password_hash($password, PASSWORD_DEFAULT);
 
         $registeringUserRepository = new RegisteringUserRepository();
 
