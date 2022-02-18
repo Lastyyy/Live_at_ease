@@ -1,0 +1,141 @@
+body {
+    background: transparent linear-gradient(180deg, #3089A9 0%, #91AA9D 100%) 0 0 no-repeat padding-box;
+    margin: 0;
+    overflow: hidden;
+}
+
+.page-container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 20% 60% 20%;
+}
+
+nav {
+    grid-row: 1;
+    grid-column: 1/ span 3;
+    display: grid;
+    grid-template-columns: 20% repeat(5, 12%) 30%;
+    border-bottom: 0.05vh solid #DFDFDF;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.logo-button>img{
+    margin-top: 0.2vh;
+    height: 8.9vh;
+    width: 8.9vw;
+}
+
+.white-button, .orange-button{
+    background: transparent;
+    border-width: 0.3em;
+    border-style: inset;
+    width: 11.77vw;
+    height: 9.2vh;
+    font: normal normal bold 1vw Segoe UI;
+}
+
+.white-button:hover, .orange-button:hover, #logout-button:hover, .logo-button:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.orange-button{
+    border-color: transparent transparent orange transparent;
+    color: orange;
+}
+
+.white-button{
+    color: white;
+    border: none;
+}
+
+#logout-button, .logo-button{
+    background: transparent;
+    border: none;
+
+    color: white;
+
+    font: normal normal bold 1vw Segoe UI;
+}
+
+.left-menu{
+    grid-row: 2;
+    grid-column: 1;
+    display: grid;
+}
+
+.left-menu-button{
+    display: grid;
+    width: 90%;
+    font: normal normal bold 1vw Segoe UI;
+    padding: 0.14em;
+    /*letter-spacing: 0.02em;*/
+    color: #564E4E;
+    background: #F8C7BA 0 0 no-repeat padding-box;
+    border: 1px solid #00DF2D;
+    border-radius: 2em;
+    line-height: 1.7em;
+}
+
+.left-menu>ul>li{
+    margin: 1em 0;
+}
+
+.left-menu>ul{
+    align-self: end;
+    padding: 0;
+    margin-left: 3vh;
+    list-style-type: none;
+}
+
+.left-menu>ul>li:last-child{
+    margin-top: 26vh;
+}
+
+.group{
+    align-self: center;
+}
+
+.group>ul{
+    display: grid;
+    padding: 0;
+    margin-left: 1.5vw;
+    list-style-type: none;
+}
+
+.group>ul>li>a{
+    display: grid;
+    grid-template-columns: 22% 78%;
+    font: normal normal bold 1.2vw Segoe UI;
+    color: darkmagenta;
+    align-items: center;
+    margin: 1.4vh 0;
+}
+
+.group>ul>li>a>img{
+    object-fit: cover;
+    border-radius: 50%;
+    width: 3.6vw;
+    height: 3.6vw;
+}
+
+.group>ul>p{
+    font: normal normal bold 1.8vw Segoe UI;
+    color: green;
+    text-align: center;
+    margin: 1.4vh 1vw 1.4vh 0;
+}
+
+.group>ul>.no-users{
+    font: normal normal bold 1.3vw Segoe UI;
+    color: #564E4E;
+    text-align: center;
+    margin: 1.4vh 1vw 1.4vh 0;
+}
+
+a{
+    text-decoration: none;
+}

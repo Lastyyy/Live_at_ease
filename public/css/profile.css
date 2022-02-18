@@ -1,0 +1,92 @@
+.middle{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-box{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border: 1px solid #91AA9D;
+    border-radius: 66px ;
+    opacity: 0.70;
+    width: 88%;
+    height: 35vw;
+}
+
+
+.add-info>p{
+    font: normal normal bold 2.4vw Segoe UI;
+    padding: 0.4em;
+    color: #564E4E;
+    letter-spacing: 0.05vw;
+
+}
+
+.add-info>textarea{
+    background: transparent;
+    text-align: left;
+    font: normal normal normal 1.22vw Segoe UI;
+    color: #70707080;
+    margin: 1em;
+    width: 85%;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 0.5em;
+}
+
+.add-info>button{
+    background: #8DE151 0 0 no-repeat padding-box;
+    border: 1px solid #91AA9D;
+    border-radius: 30px;
+    width: 55%;
+    text-align: center;
+    font: normal normal bold 1.3vw Segoe UI;
+    letter-spacing: 0.05vw;
+    color: #707070;
+    padding: 0.8vw;
+    margin: 1.3vw;
+}
+
+.profile-pic{
+    object-fit: cover;
+    border-radius: 50%;
+    justify-self: center;
+    padding-top: 0.15vw;
+    width: 25vw;
+    height: 25vw;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right, .profile-box>div>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-box>div>form>textarea{
+    background: transparent;
+    text-align: left;
+    font: normal normal normal 1.22vw Segoe UI;
+    color: #201520;
+    width: 15vw;
+    border: 1px solid gray;
+    padding: 0.5em;
+}
+
+.right>p{
+    font: normal normal bold 1.22vw Segoe UI;
+    color: orangered;
+}
+
+
+

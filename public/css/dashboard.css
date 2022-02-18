@@ -1,54 +1,208 @@
-body {
-    background: transparent linear-gradient(180deg, #3089A9 0%, #91AA9D 100%) 0 0 no-repeat padding-box;
-    margin: 0
+.middle{
+    margin-top: 1vw;
+    display: grid;
+    grid-template: 50% 50%/50% 50%;
 }
 
-.page-container{
-    display: grid;
-    grid-template-rows: 20vh 80vh;
-    grid-template-columns: 20% 60% 20%;
-}
+/* =------------------------------------------------------------------*/
 
-nav {
-    grid-area: 1/1/2/4;
+.info-container{
+    width: 98%;
+    height: 98%;
+    background: transparent linear-gradient(180deg, #5CA6C0 0%, #89D8AF 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 8% 8% 3% 3%;
     display: grid;
-    grid-template-columns: 20% repeat(5, 12%) 25%;
-    height: 10vh;
-    width: 100vw;
-    border-bottom: 0.05em solid #DFDFDF;
+    grid-template-rows: 10% 90%;
     justify-items: center;
+}
+
+.top-title, .info-box>p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal normal bold 1vw Segoe UI;
+    color: #564E4E;
+    border-bottom: 1px solid #707070;
+    text-align: center;
+    width: 100%;
+}
+
+.info-box>p{
+    font: normal normal bold 2vw Segoe UI;
+    border-bottom: none;
+}
+
+.info-box{
+    height: 98%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.logo-button{
-    margin-top: 0.2em;
+.information, .receipt, .event, .finance-info{
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 10px;
+    width: 28vw;
+
 }
 
-.white-button, .orange-button{
-    background: transparent;
-    border-width: 0.4em;
-    border-style: inset;
-    width: 95%;
-    height: 88%;
+.information>div, .event>div{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
 }
 
-.white-button:hover, .orange-button:hover, #logout-button:hover, .logo-button:hover{
-    background: rgba(255, 255, 255, 0.1);
+.information>div>img, .event>div>img{
+    object-fit: cover;
+    border-radius: 50%;
+    justify-self: center;
+    padding-top: 0.15vw;
+    width: 3.6vw;
+    height: 3.6vw;
 }
 
-.orange-button{
-    border-color: transparent transparent orange transparent;
-    color: orange;
+.who{
+    font: normal normal bold 1vw Segoe UI;
+    color: #564E4E;
+    margin: 0;
 }
 
-.white-button{
-    color: white;
-    border: none;
+.when{
+    font: normal normal bold 0.8vw Segoe UI;
+    opacity: 50%;
+    color: #564E4E;
+    margin: 0;
 }
 
-#logout-button, .logo-button{
-    background: transparent;
-    border: none;
+.information>p, .event>p{
+    font: normal normal normal 1vw Segoe UI;
+    color: #564E4E;
+    padding: 0 0.4vw;
+    word-wrap: break-word;
+    overflow: hidden;
+}
 
-    color: white;
+/*----------------------------------------------------*/
+
+.receipt{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-auto-flow: column;
+}
+
+.receipt>div, .send-to{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0.1vw;
+}
+
+.send-to>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.send-to:hover{
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.receipt>div>img{
+    object-fit: cover;
+    border-radius: 50%;
+    justify-self: center;
+    padding-top: 0.15vw;
+    width: 3.6vw;
+    height: 3.6vw;
+}
+
+.who, .how-much, .amount, .send{
+    font: normal normal bold 1vw Segoe UI;
+    color: #564E4E;
+    margin: 0;
+}
+
+.send{
+    font: normal normal bold 1.4vw Segoe UI;
+    color: green;
+}
+
+.how-much{
+    font: normal normal bold 1.4vw Segoe UI;
+    color: red;
+}
+
+.when{
+    font: normal normal bold 0.8vw Segoe UI;
+    opacity: 50%;
+    color: #564E4E;
+    margin: 0;
+}
+
+.receipt>p{
+    text-align: center;
+    align-self: center;
+    font: normal normal bold 1vw Segoe UI;
+    margin:0;
+    color: #564E4E;
+    padding: 0 0.4vw;
+}
+
+.receipt>.amount{
+    font: normal normal bold 2.2vw Segoe UI;
+    padding: 0;
+    margin: 1vw;
+    align-self: center;
+}
+
+.date{
+    font: normal normal bold 1vw Segoe UI;
+    color: darkblue;
+    margin: 0;
+}
+
+/* ---------------------------------------------------------------------- */
+
+.finance-info {
+    display: grid;
+    grid-template-columns: 22% 70%;
+    justify-items: center;
+    align-items: center;
+    font: normal normal bold 1.1vw Segoe UI;
+}
+
+.finance-info>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.finance-info>i{
+    color: #564E4E;
+}
+
+.top-msg{
+    font: normal normal bold 1.1vw Segoe UI;
+    color: #564E4E;
+}
+
+.bot-msg{
+    font: normal normal bold 1.1vw Segoe UI;
+    color: darkorange;
+}
+
+.max-lines {
+    display: block;/* or inline-block */
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 4em;
+    line-height: 1.8em;
 }

@@ -1,0 +1,213 @@
+.middle{
+    margin-top: 1vw;
+    display: grid;
+    grid-template-rows: 10vh 1fr;
+}
+
+/* =------------------------------------------------------------------*/
+
+.buttons-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.white-button-sec, .orange-button-sec{
+    background: transparent;
+    border-width: 0.4em;
+    border-style: inset;
+    width: 100%;
+    height: 9.2vh;
+    font: normal normal bold 1vw Segoe UI;
+}
+
+.white-button-sec:hover, .orange-button-sec:hover{
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.orange-button-sec{
+    border-color: transparent transparent orange transparent;
+    color: orange;
+}
+
+.white-button-sec{
+    color: white;
+    border: none;
+}
+
+.content-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    max-height: 78vh;
+}
+
+.receipts-boxes-container{
+    width: 98%;
+    height: 98%;
+    max-height: 98%;
+    background: transparent linear-gradient(180deg, #5CA6C0 0%, #89D8AF 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 8% 8% 3% 3%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    justify-items: center;
+    overflow: hidden;
+}
+
+.top-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal normal bold 1vw Segoe UI;
+    color: #564E4E;
+    border-bottom: 1px solid #707070;
+    text-align: center;
+    width: 100%;
+
+}
+
+.receipts-box{
+    height: 98%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/*----------------------------------------------------*/
+
+.depo-taken{
+    background: rgba(255, 255, 255, 0.77);
+    border-radius: 10px;
+    width: 96%;
+    margin: 0.4vw 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-flow: column;
+}
+
+.depo-taken>.owner-for{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.2vw 0;
+}
+
+.owner{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0.1vw;
+}
+
+.depo-pay{
+    grid-row: 1/ span 2;
+    display: grid;
+    justify-items: center;
+}
+
+.owner>img{
+    object-fit: cover;
+    border-radius: 50%;
+    justify-self: center;
+    width: 3.6vw;
+    height: 3.6vw;
+}
+
+.who, .how-much, .amount, .text{
+    font: normal normal bold 1vw Segoe UI;
+    color: #564E4E;
+    margin: 0;
+}
+
+.text{
+    font: normal normal bold 1.4vw Segoe UI;
+    padding-top: 1vw;
+}
+
+.how-much{
+    font: normal normal bold 1.4vw Segoe UI;
+    color: red;
+}
+
+.when{
+    font: normal normal bold 0.8vw Segoe UI;
+    opacity: 50%;
+    color: #564E4E;
+    margin: 0;
+}
+
+.owner-for>p{
+    text-align: center;
+    font: normal normal bold 1.4vw Segoe UI;
+    margin:0;
+    color: #564E4E;
+    padding: 0 0.4vw;
+}
+
+#waiting-one>.receipt>.amount{
+    font: normal normal bold 2vw Segoe UI;
+    padding: 0;
+    margin: 1vw;
+    color: red;
+    align-self: center;
+}
+
+.date{
+    font: normal normal bold 1vw Segoe UI;
+    color: darkblue;
+    margin: 0;
+}
+
+/* -----------------------rents------------------ */
+
+.unpaid-rent{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 10px;
+    width: 96%;
+    margin: 0.4vw 0;
+}
+
+.unpaid-rent, .unpaid-rent>div>p{
+    font: normal normal bold 1.2vw Segoe UI;
+    color: #564E4E;
+}
+
+.unpaid-rent>div>.state{
+    color: red;
+}
+
+.unpaid-rent>div, .paid-rent>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.unpaid-rent>i{
+    color:green;
+}
+
+.paid-rent{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 10px;
+    width: 96%;
+    margin: 0.4vw 0;
+}
+
+.paid-rent, .paid-rent>div>p{
+    font: normal normal bold 1.2vw Segoe UI;
+    color: #564E4E;
+}
