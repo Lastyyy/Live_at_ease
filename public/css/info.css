@@ -1,0 +1,95 @@
+.middle{
+    display: flex;
+    margin-top: 4vh;
+    justify-content: center;
+}
+
+/* =------------------------------------------------------------------*/
+
+.info-container{
+    width: 75%;
+    height: 98%;
+    background: transparent linear-gradient(180deg, #5CA6C0 0%, #89D8AF 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 8% 8% 3% 3%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+    justify-items: center;
+}
+
+.top-title, .info-box>p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: normal normal bold 1vw Segoe UI;
+    color: #564E4E;
+    border-bottom: 1px solid #707070;
+    text-align: center;
+    width: 100%;
+}
+
+.info-box>p{
+    font: normal normal bold 2vw Segoe UI;
+    border-bottom: none;
+}
+
+.info-box{
+    height: 98%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.information{
+    background: rgba(255, 255, 255, 0.99);
+    border-radius: 10px;
+    width: 96%;
+    margin: 0.4vw 0;
+    height: auto;
+}
+
+.information>div{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+}
+
+.information>div>img{
+    object-fit: cover;
+    border-radius: 50%;
+    justify-self: center;
+    padding-top: 0.15vw;
+    width: 3.6vw;
+    height: 3.6vw;
+}
+
+.who{
+    font: normal normal bold 1vw Segoe UI;
+    color: #564E4E;
+    margin: 0;
+}
+
+.when{
+    font: normal normal bold 0.8vw Segoe UI;
+    opacity: 50%;
+    color: #564E4E;
+    margin: 0;
+}
+
+.information>p{
+    font: normal normal normal 1vw Segoe UI;
+    color: #564E4E;
+    padding: 0 0.4vw;
+    word-wrap: break-word;
+    overflow: hidden;
+    width:92%;
+    margin-left: 1vw;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}

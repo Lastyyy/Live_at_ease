@@ -1,0 +1,60 @@
+.middle{
+    display: flex;
+    justify-content: center;
+}
+
+.add-event{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    border: 1px solid #91AA9D;
+    border-radius: 66px ;
+    opacity: 0.70;
+    width: 88%;
+    height: 40vw;
+}
+
+
+.add-event>p{
+    font: normal normal bold 2.4vw Segoe UI;
+    padding: 0.4em;
+    color: #564E4E;
+    letter-spacing: 0.05vw;
+
+}
+
+.add-event>textarea{
+    background: transparent;
+    text-align: left;
+    font: normal normal normal 1.22vw Segoe UI;
+    color: #70707080;
+    margin: 1em;
+    width: 85%;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 0.5em;
+}
+
+.add-event>button{
+    background: #8DE151 0 0 no-repeat padding-box;
+    border: 1px solid #91AA9D;
+    border-radius: 30px;
+    width: 55%;
+    text-align: center;
+    font: normal normal bold 1.3vw Segoe UI;
+    letter-spacing: 0.05vw;
+    color: #707070;
+    padding: 0.8vw;
+    margin: 1.3vw;
+}
+
+.timestamp{
+    display: grid;
+
+}
+
+.timestamp>input{
+    margin: 0.2vw 0;
+}

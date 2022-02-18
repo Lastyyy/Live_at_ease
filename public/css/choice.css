@@ -1,0 +1,97 @@
+body {
+    background: transparent linear-gradient(180deg, #3089A9 0%, #91AA9D 100%) 0 0 no-repeat padding-box;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+    width: 50%;
+}
+
+.right {
+    text-align: center;
+    width: 40%;
+}
+
+.right>p, .right>div>p{
+    font: bold normal normal 3vh Segoe UI;
+    color: forestgreen;
+    margin: 1vw 0;
+    padding: 0.5em;
+}
+
+.right>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right>div>.code{
+    font: bold normal normal 5vh Segoe UI;
+    color: red;
+    margin:0;
+    padding:0;
+    background: rgba(255, 255, 255, 0.44);
+    border-radius: 10px;
+    width: 14vw;
+}
+
+
+
+.right>a>.create-button, #logout-button{
+    background: #FFC573 0 0 no-repeat padding-box;
+    border: 1px solid #91AA9D;
+    border-radius: 30px;
+    width: 60%;
+    height: 7vh;
+    text-align: center;
+    font: normal normal bold 2.5vh Segoe UI;
+    letter-spacing: 0.05vw;
+    color: darkslateblue;
+}
+
+#logout-button{
+    background: #8DE151 0 0 no-repeat padding-box;
+    font: normal normal bold 1.8vh Segoe UI;
+    height: 4vh;
+    width: 35%;
+}
+
+a{
+    width: 55%;
+}
+
+
+
+@media screen and (max-device-width:540px),
+screen and (max-width:540px) {
+    .login-container{
+        flex-direction: column;
+        width: 100vw;
+    }
+    .logo, .login-form{
+        width: 100%;
+    }
+    .logo {
+        height: 40%;
+    }
+    form {
+        width: 75%;
+        margin: auto;
+    }
+
+}
+
+form>p{
+    font: bold normal normal 2.5vh Segoe UI;
+    color: #201520;
+    margin: 0;
+}
