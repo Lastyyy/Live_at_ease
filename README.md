@@ -1,4 +1,4 @@
-#**<div style="text-align: center"> Live at Ease</div>**
+# **Live at Ease**
 
 Aplikacja ma na celu ułatwienie mieszkania we współdzielonym mieszkaniu, szczególnie osobom dopiero poznającym się oraz mówiącym różnymi językami.
 Głównym celem jest usprawnienie komunikacji, ustalania wspólnych wydarzeń oraz dzielenia się kosztami.
@@ -12,7 +12,7 @@ Usprawnić ma ona kontrolę i ułatwienie płatności za czynsz od lokatorów or
 
 ![](public/img/choice.png)
 
-### Po dodaniu do grupy logowanie przenosi użytkownika na główny ekran, zawierający najnowsze informacje, najnowsze oczekujące rachunki do zapłaty, zbliżające się wydarzenia oraz stany płatności za czynsz oraz kaucji:
+### Główny ekran, zawierający najnowsze informacje, najnowsze oczekujące rachunki do zapłaty, zbliżające się wydarzenia oraz stany płatności za czynsz oraz kaucji:
 
 ![](public/img/dashboard.png)
 
