@@ -20,7 +20,7 @@ class SecurityController extends AppController {
         $password = ''.$_POST['password'];
 
 
-        $user = $userRepository->getUser($email, True);
+        $user = $userRepository->getUserByEmail($email, True);
 
         if (!$user) {
             return $this->render('login', ['messages' => ['User with this email doesn\'t exist!']]);
@@ -70,7 +70,7 @@ class SecurityController extends AppController {
 
         $email = $_POST['email'];
 
-        $user = $userRepository->getUser($email);
+        $user = $userRepository->getUserByEmail($email);
 
         if ($user) {
             return $this->render('register', ['messages' => ['Konto o podanym email już istnieje!']]);

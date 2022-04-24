@@ -10,7 +10,7 @@
         if($userDetails->getId()!=$_SESSION['id_user']):
         $counter+=1;?>
         <li>
-            <a href="profile?id=<?=$counter?>;">
+            <a href="profile?id=<?=$counter-1?>;">
                 <img class="avatar" alt="logo" src="public/uploads/<?= $userDetails->getImage();?>">
                 <?= $userDetails->getName()." ".$userDetails->getSurname();?>
             </a>

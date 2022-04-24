@@ -8,7 +8,7 @@ Usprawnić ma ona kontrolę i ułatwienie płatności za czynsz od lokatorów or
 
 ![](public/img/login.png)
 
-### Po poprawnej rejestracji oraz zalogowaniu się, użytkownik może stworzyć grupę, lub zostać zaproszonym poprzez podanie kodu współlokatorowi, który już należy do grupy:
+### Po poprawnej rejestracji oraz zalogowaniu się, użytkownik może stworzyć grupę lub zostać zaproszonym poprzez podanie kodu współlokatorowi, który już należy do grupy:
 
 ![](public/img/choice.png)
 
@@ -16,7 +16,7 @@ Usprawnić ma ona kontrolę i ułatwienie płatności za czynsz od lokatorów or
 
 ![](public/img/dashboard.png)
 
-### Każda z kategorii posiada osobne okno, do których przechodzi się przyciskami z górnego paska nawigacyjnego, zawierające wszystkie informacje dla danego użytkownika:
+### Każda z kategorii posiada osobne okno, zawierające wszystkie informacje dla danego użytkownika. Przechodzi się do nich przyciskami z górnego paska nawigacyjnego:
 
 ![](public/img/info.png)
 ![](public/img/receipts.png)

@@ -20,7 +20,19 @@ class DefaultController extends AppController {
 
     public function choice()
     {
-        $this->render('choice');
+        $userRepository = new UserRepository();
+        $user = $userRepository->getUserById($_SESSION["id_user"]);
+
+        if($user->getIdGroup()!=null) {
+            $_SESSION["id_group"] = $user->getIdGroup();
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/dashboard");
+        }
+        else
+        {
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/choice");
+        }
     }
 
     public function createGroup()
