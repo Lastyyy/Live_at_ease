@@ -33,7 +33,7 @@ Usprawnić ma ona kontrolę i ułatwienie płatności za czynsz od lokatorów or
 - CSS
 - PHP 8.1
 - JavaScript
-- PostgreeSQL
+- PostgreSQL
 
 
 
